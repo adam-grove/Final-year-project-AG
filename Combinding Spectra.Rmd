@@ -1,0 +1,45 @@
+---
+title: "Combining Spectra"
+output: github_document
+---
+
+```{R}
+# Loading in required libraies
+
+library(MSnbase)
+library(rmarkdown)
+library(xcms)
+library(MassSpecWavelet)
+
+```
+
+## Listing the files 
+```{R}
+file.prof = list.files("G:\\My Drive\\Bioinformatics\\LIFE700 Final Project\\XCMS\\p1", recursive = TRUE, full.names = TRUE)
+```
+
+## Reading in the data
+```{R}
+prof.files = readMSData(file.prof, 
+                        pdata = NULL, 
+                        msLevel. = 1,
+                        verbose = isMSnbaseVerbose(), 
+                        centroided. = NA, 
+                        smoothed. = NA,
+                        mode = "onDisk")
+
+                        library(MSnbase)
+spec= Spectra(spectra(prof.files))
+```
+## Combining the spectra 
+The mass to charge values for all spectra in each file will be averaged (mean) into a new spectra 
+```{R}
+res = combineSpectra(spec, 
+                     mzFun = base::mean, 
+                     intensityFun = base::mean)
+```
+## Converting the spectra into a usable format
+Allows the spectra to be used with the MSnbase package
+```{R}
+newexp = as(res, "MSnExp")
+```
