@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+box-sizing: border-box;
+min-width: 200px;
+max-width: 980px;
+margin: 0 auto;
+padding: 45px;
+padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="xcms-pipeline-template">XCMS Pipeline Template</h1>
+<h1 id="introduction">Introduction</h1>
+<h1 id="loading-libraries">Loading libraries</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Load required libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">library</span>(MSnbase)</span></code></pre></div>
+<pre><code>## Loading required package: BiocGenerics
+
+## 
+## Attaching package: &#39;BiocGenerics&#39;
+
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     IQR, mad, sd, var, xtabs
+
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+##     colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+##     get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+##     match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+##     Position, rank, rbind, Reduce, rownames, sapply, setdiff, table,
+##     tapply, union, unique, unsplit, which.max, which.min
+
+## Loading required package: Biobase
+
+## Welcome to Bioconductor
+## 
+##     Vignettes contain introductory material; view with
+##     &#39;browseVignettes()&#39;. To cite Bioconductor, see
+##     &#39;citation(&quot;Biobase&quot;)&#39;, and for packages &#39;citation(&quot;pkgname&quot;)&#39;.
+
+## Loading required package: mzR
+
+## Loading required package: Rcpp
+
+## Loading required package: S4Vectors
+
+## Loading required package: stats4
+
+## 
+## Attaching package: &#39;S4Vectors&#39;
+
+## The following object is masked from &#39;package:utils&#39;:
+## 
+##     findMatches
+
+## The following objects are masked from &#39;package:base&#39;:
+## 
+##     expand.grid, I, unname
+
+## Loading required package: ProtGenerics
+
+## 
+## Attaching package: &#39;ProtGenerics&#39;
+
+## The following object is masked from &#39;package:stats&#39;:
+## 
+##     smooth
+
+## 
+## This is MSnbase version 2.30.1 
+##   Visit https://lgatto.github.io/MSnbase/ to get started.
+##  Consider switching to the &#39;R for Mass Spectrometry&#39;
+##  packages - see https://RforMassSpectrometry.org for details.
+
+## 
+## Attaching package: &#39;MSnbase&#39;
+
+## The following object is masked from &#39;package:base&#39;:
+## 
+##     trimws</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(xcms)</span></code></pre></div>
+<pre><code>## Loading required package: BiocParallel
+
+## 
+## This is xcms version 4.2.1
+
+## 
+## Attaching package: &#39;xcms&#39;
+
+## The following object is masked from &#39;package:stats&#39;:
+## 
+##     sigma</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(MassSpecWavelet)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">register</span>(<span class="fu">SerialParam</span>())</span></code></pre></div>
+<h1 id="loading-in-data">Loading in data</h1>
+<p>Loading in the combined data files and using the command readMSData
+to load in the raw spectrum data</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Define folder path and list mzML files</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>folder_path <span class="ot">&lt;-</span> <span class="st">&quot;G:/My Drive/Bioinformatics/LIFE700 Final Project/Data/Combined Files&quot;</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>mzML_files <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path=</span>folder_path,<span class="at">full.names=</span><span class="cn">TRUE</span>,<span class="at">pattern =</span> <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.mzML$&quot;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co"># Separate patient ID and time point from filenames</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>file_info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>  <span class="at">filename =</span> mzML_files,</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>  <span class="at">patient_id =</span> <span class="fu">sub</span>(<span class="st">&quot;Combined_P(</span><span class="sc">\\</span><span class="st">d+)_t</span><span class="sc">\\</span><span class="st">d+h</span><span class="sc">\\</span><span class="st">.mzML&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, mzML_files),</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>  <span class="at">time_point =</span> <span class="fu">sub</span>(<span class="st">&quot;Combined_P</span><span class="sc">\\</span><span class="st">d+_t(</span><span class="sc">\\</span><span class="st">d+)h</span><span class="sc">\\</span><span class="st">.mzML&quot;</span>, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">1&quot;</span>, mzML_files)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>)</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co"># Load data using readMSData</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>ham_raw <span class="ot">&lt;-</span> <span class="fu">readMSData</span>(<span class="at">files =</span> mzML_files, </span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>                      <span class="at">pdata =</span> <span class="fu">new</span>(<span class="st">&quot;NAnnotatedDataFrame&quot;</span>, file_info),</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>                      <span class="at">mode =</span> <span class="st">&quot;onDisk&quot;</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co"># Check retention time</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="fu">rtime</span>(ham_raw)</span></code></pre></div>
+<pre><code>## F001.S1 F002.S1 F003.S1 F004.S1 F005.S1 F006.S1 F007.S1 F008.S1 F009.S1 F010.S1 
+##  0.1993  0.1929  0.1932  0.2034  0.2003  0.1975  0.1850  0.1889  0.1933  0.1932 
+## F011.S1 F012.S1 F013.S1 F014.S1 F015.S1 F016.S1 F017.S1 F018.S1 F019.S1 F020.S1 
+##  0.1983  0.1864  0.1861  0.1935  0.2029  0.1909  0.1881  0.1938  0.2037  0.2036 
+## F021.S1 F022.S1 F023.S1 F024.S1 F025.S1 F026.S1 F027.S1 F028.S1 F029.S1 F030.S1 
+##  0.1917  0.2010  0.2002  0.2029  0.1850  0.2042  0.2023  0.1969  0.2009  0.1854 
+## F031.S1 F032.S1 F033.S1 F034.S1 F035.S1 F036.S1 F037.S1 F038.S1 F039.S1 F040.S1 
+##  0.2008  0.2023  0.1961  0.1971  0.1928  0.1988  0.2022  0.2045  0.2022  0.1984 
+## F041.S1 F042.S1 F043.S1 F044.S1 F045.S1 F046.S1 F047.S1 F048.S1 F049.S1 F050.S1 
+##  0.1859  0.1960  0.1950  0.2037  0.2029  0.1902  0.1965  0.1948  0.1842  0.1845 
+## F051.S1 F052.S1 F053.S1 F054.S1 F055.S1 F056.S1 F057.S1 F058.S1 F059.S1 F060.S1 
+##  0.1897  0.1937  0.1852  0.1895  0.1894  0.1965  0.2003  0.1982  0.1982  0.2035 
+## F061.S1 F062.S1 F063.S1 F064.S1 F065.S1 F066.S1 F067.S1 F068.S1 F069.S1 F070.S1 
+##  0.1850  0.1998  0.1879  0.2001  0.1852  0.1881  0.2010  0.1930  0.1964  0.1910 
+## F071.S1 F072.S1 F073.S1 F074.S1 F075.S1 F076.S1 F077.S1 F078.S1 F079.S1 F080.S1 
+##  0.1906  0.2012  0.1866  0.1989  0.1924  0.1862  0.1949  0.1845  0.2035  0.2016 
+## F081.S1 F082.S1 F083.S1 F084.S1 F085.S1 F086.S1 F087.S1 F088.S1 F089.S1 F090.S1 
+##  0.1945  0.1981  0.1939  0.1924  0.1855  0.1950  0.1906  0.2002  0.1955  0.1872 
+## F091.S1 F092.S1 F093.S1 F094.S1 F095.S1 F096.S1 F097.S1 F098.S1 F099.S1 F100.S1 
+##  0.1944  0.1968  0.2009  0.1988  0.1979  0.1932  0.1927  0.1885  0.1847  0.1891 
+## F101.S1 F102.S1 F103.S1 F104.S1 F105.S1 F106.S1 F107.S1 F108.S1 F109.S1 F110.S1 
+##  0.1916  0.1908  0.1870  0.1842  0.1858  0.1961  0.1868  0.1895  0.2026  0.1840 
+## F111.S1 F112.S1 F113.S1 F114.S1 F115.S1 F116.S1 F117.S1 F118.S1 
+##  0.1853  0.1929  0.1923  0.1870  0.1987  0.1980  0.2042  0.2036</code></pre>
+<h1 id="peak-detection">Peak detection</h1>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Set parameters for peak detection (adjust as needed)</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>msw <span class="ot">&lt;-</span> <span class="fu">MSWParam</span>(<span class="at">scales =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>), <span class="at">nearbyPeak =</span> <span class="cn">TRUE</span>, <span class="at">winSize.noise =</span> <span class="dv">500</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>                 <span class="at">SNR.method =</span> <span class="st">&quot;data.mean&quot;</span>, <span class="at">snthresh =</span> <span class="dv">10</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="co"># Find chromatography peaks</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>ham_prep <span class="ot">&lt;-</span> <span class="fu">findChromPeaks</span>(ham_raw, <span class="at">param =</span> msw)</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co"># View the first few peaks</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">chromPeaks</span>(ham_prep))</span></code></pre></div>
+<pre><code>##              mz    mzmin    mzmax rt rtmin rtmax     into     maxo       sn
+## CP0001 116.1431 116.0810 116.2213 -1    -1    -1 365304.0 321221.0 24.52595
+## CP0002 202.1826 202.1294 202.2447 -1    -1    -1 444798.7 392848.6 28.20861
+## CP0003 214.0902 214.0272 214.1738 -1    -1    -1 659627.1 603866.1 41.15843
+## CP0004 243.1829 243.1332 243.2192 -1    -1    -1 260256.8 188279.1 13.38065
+## CP0005 253.2275 253.1634 253.2779 -1    -1    -1 328739.8 257164.3 19.85256
+## CP0006 275.1757 275.1428 275.2223 -1    -1    -1 238009.5 171914.5 12.07775
+##        intf      maxf sample
+## CP0001   NA 123020.63      1
+## CP0002   NA 150778.27      1
+## CP0003   NA 235150.10      1
+## CP0004   NA  71130.53      1
+## CP0005   NA 103195.10      1
+## CP0006   NA  63512.57      1</code></pre>
+<h1 id="calibration">Calibration</h1>
+<p>Calibration canbe used to correct the m/z values of the identified
+peaks. The “edgeshift” method adjusts all peaks within the range of m/z
+values of calibrants calculated from one datafile</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="do">## Subset to the first file.</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>first_file <span class="ot">&lt;-</span> <span class="fu">filterFile</span>(ham_prep, <span class="at">file =</span> <span class="dv">1</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="do">## Extract 3 m/z values</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>calib_mz <span class="ot">&lt;-</span> <span class="fu">chromPeaks</span>(first_file)[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>), <span class="st">&quot;mz&quot;</span>]</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>calib_mz <span class="ot">&lt;-</span> calib_mz <span class="sc">+</span> <span class="fl">0.00001</span> <span class="sc">*</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="fl">0.4</span>) <span class="sc">*</span> calib_mz <span class="sc">+</span> <span class="fl">0.0001</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># Calibration using edgeshift</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>prm <span class="ot">&lt;-</span> <span class="fu">CalibrantMassParam</span>(<span class="at">mz =</span> calib_mz, <span class="at">method =</span> <span class="st">&quot;edgeshift&quot;</span>,</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>                          <span class="at">mzabs =</span> <span class="fl">0.0001</span>, <span class="at">mzppm =</span> <span class="dv">5</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>first_file_calibrated <span class="ot">&lt;-</span> <span class="fu">calibrate</span>(first_file, <span class="at">param =</span> prm)</span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a><span class="co"># Plotting the results of the calibration </span></span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a>diffs <span class="ot">&lt;-</span> <span class="fu">chromPeaks</span>(first_file_calibrated)[, <span class="st">&quot;mz&quot;</span>] <span class="sc">-</span></span>
+<span id="cb10-13"><a href="#cb10-13" tabindex="-1"></a>  <span class="fu">chromPeaks</span>(first_file)[, <span class="st">&quot;mz&quot;</span>]</span>
+<span id="cb10-14"><a href="#cb10-14" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> <span class="fu">chromPeaks</span>(first_file)[, <span class="st">&quot;mz&quot;</span>], <span class="at">xlab =</span> <span class="fu">expression</span>(m<span class="sc">/</span>z[raw]),</span>
+<span id="cb10-16"><a href="#cb10-16" tabindex="-1"></a>     <span class="at">y =</span> diffs, <span class="at">ylab =</span> <span class="fu">expression</span>(m<span class="sc">/</span>z[calibrated] <span class="sc">-</span> m<span class="sc">/</span>z[raw]))</span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAAAgVBMVEUAAAAAADoAAGYAOpAAZmYAZrY6AAA6ADo6OmY6OpA6ZmY6kLY6kNtmAABmADpmAGZmOgBmOjpmOpBmnZBmtrZmtttmtv+QOgCQOjqQZgCQZpCQ2/+2ZgC2Zjq2kDq2/7a2///bkDrbtmbbttvb/9vb////tmb/25D//7b//9v///8Q2n9nAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAOeUlEQVR4nO3di3rbtgGGYdqenWazkm7LpGzWVrOtqcP9X+B4ECXRNikABIifxPc+beqkiSDRX3iAKDI7AsKy2E8AGEKgkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkEagkGYXaJ5l2br+4v41yNMBuqwCze9ejvvV45FAMRWbQA+b5/rHhzcCxURsAt2v6s37cfvwRqCYhv0atLR9JFBMw24f9JTlfpURKCZhexTfbOQPGwLFJJgHhTTPgWaAkViB+n04LBWBQlqQQMuD97OegyQChZEwa9DbB+8ECiOBNvGHzaPPh0OyQu2DFqeJUE8Ph1RxkARpCQf6bo7NbMrtamauO01Xf938vPM/hh7WYpbPxfuHd3rBvp7lZZFcFtSHX/9koHQDzbrP4t1P+/5Q1vzbfFkv6nf/o/6V+mc3H9ZsSGfvH97pBft6lpcFlx2vH/Pq1y+L9v3wZiNYPZ/DZnCSSSDQ7OrHjz/t+0PnRXnM2hKvf+m04M//DD6s2ZDO3j+80wv29SyvGjye/hIfs+6vX5bjJ+ObDGHzfPLsdL5d0X4x6uFCIFCz0RcZ6Pl80DLVh7fRDxcEgZqNvshA2zPqS4XsO0mXfj77ad8fuuwosQ9q9WQuDXYeM84+6BzWoO0Kr++n/X8ou/qSo3iLJ3P+uxz/KL49X/nDPqj9WVRIW5hAz6eL9Kw/JdagmINA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" /><!-- --></p>
+<h1 id="grouping-the-peaks">Grouping the peaks</h1>
+<p>Groups the peaks from each patients</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>mzc_prm <span class="ot">&lt;-</span> <span class="fu">MzClustParam</span>(<span class="at">sampleGroups =</span> ham_prep<span class="sc">$</span>sample_group)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>ham_prep <span class="ot">&lt;-</span> <span class="fu">groupChromPeaks</span>(ham_prep, <span class="at">param =</span> mzc_prm)</span></code></pre></div>
+<pre><code>## Empty &#39;sampleGroups&#39; in &#39;param&#39;, assuming all samples to be in the same group.
+
+## 3.03  69.21  85.50   99.76</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>ham_prep</span></code></pre></div>
+<pre><code>## MSn experiment data (&quot;XCMSnExp&quot;)
+## Object size in memory: 0.12 Mb
+## - - - Spectra data - - -
+##  MS level(s): 1 
+##  Number of spectra: 118 
+##  MSn retention times: 0:00 - 0:00 minutes
+## - - - Processing information - - -
+## Data loaded [Mon Jun 10 15:07:00 2024] 
+##  MSnbase version: 2.30.1 
+## - - - Meta data  - - -
+## phenoData
+##   rowNames: 1 2 ... 118 (118 total)
+##   varLabels: filename patient_id time_point
+##   varMetadata: labelDescription
+## Loaded from:
+##   [1] Combined_P1_t0h.mzML...  [118] Combined_P9_t9h.mzML
+##   Use &#39;fileNames(.)&#39; to see all files.
+## protocolData: none
+## featureData
+##   featureNames: F001.S1 F002.S1 ... F118.S1 (118 total)
+##   fvarLabels: fileIdx spIdx ... spectrum (35 total)
+##   fvarMetadata: labelDescription
+## experimentData: use &#39;experimentData(object)&#39;
+## - - - xcms preprocessing - - -
+## Chromatographic peak detection:
+##  method: MSW 
+##  4518 peaks identified in 118 samples.
+##  On average 38.3 chromatographic peaks per sample.
+## Correspondence:
+##  method: mzClust 
+##  36 features identified.
+##  Median mz range of features: 0.0019416
+##  Median rt range of features: 0</code></pre>
+<h1 id="saving-the-feature-definitions-to-a-file">Saving the feature
+definitions to a file</h1>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>feature_def <span class="ot">&lt;-</span> <span class="fu">featureDefinitions</span>(ham_prep)</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>feature_def <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(feature_def)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>is_list_col <span class="ot">&lt;-</span> <span class="fu">sapply</span>(feature_def, is.list)</span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="co"># Flatten list columns</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a><span class="cf">for</span> (col <span class="cf">in</span> <span class="fu">names</span>(feature_def)[is_list_col]) {</span>
+<span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a>  feature_def[[col]] <span class="ot">&lt;-</span> <span class="fu">sapply</span>(feature_def[[col]], toString)</span>
+<span id="cb15-9"><a href="#cb15-9" tabindex="-1"></a>}</span>
+<span id="cb15-10"><a href="#cb15-10" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" tabindex="-1"></a><span class="fu">head</span>(feature_def)</span></code></pre></div>
+<pre><code>##         mzmed    mzmin    mzmax rtmed rtmin rtmax npeaks  X1
+## FT01 116.1432 116.1422 116.1441    -1    -1    -1    118 118
+## FT02 202.1803 202.1780 202.1826    -1    -1    -1    118 118
+## FT03 214.0901 214.0885 214.0923    -1    -1    -1    118 118
+## FT04 243.1830 243.1826 243.1844    -1    -1    -1     81  81
+## FT05 253.2275 253.2241 253.2283    -1    -1    -1     69  69
+## FT06 275.1757 275.1751 275.1770    -1    -1    -1     98  98
+##                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  peakidx
+## FT01 922, 1632, 264, 1595, 3539, 2570, 597, 4159, 4203, 1, 2091, 1872, 331, 2165, 36, 3750, 683, 105, 2458, 392, 3630, 3058, 4424, 3880, 2201, 4245, 3221, 2687, 1801, 4287, 428, 640, 3670, 70, 2536, 3494, 2342, 3021, 1391, 513, 2052, 2645, 2796, 4333, 2721, 2606, 1160, 357, 2865, 4471, 1528, 173, 954, 2238, 2308, 3411, 1223, 137, 1061, 1763, 1490, 3922, 3297, 4376, 4119, 1424, 3339, 1975, 3253, 3963, 731, 3583, 1026, 1128, 1666, 3796, 1353, 1560, 1322, 3374, 3453, 2129, 2941, 1287, 781, 2382, 2498, 1941, 2272, 2981, 3711, 1100, 4006, 2759, 3841, 2013, 1731, 828, 3185, 1457, 1701, 2833, 1839, 2423, 295, 205, 3143, 238, 2903, 992, 3100, 1190, 1256, 1898, 471, 552, 874, 4068
+## FT02 1634, 1669, 2868, 106, 1224, 3412, 2166, 358, 4378, 1703, 207, 875, 1804, 138, 1840, 3254, 4288, 3059, 430, 2646, 1029, 2762, 3454, 4204, 1732, 2202, 599, 3842, 37, 3797, 1426, 4425, 3299, 3585, 685, 4334, 3101, 393, 3222, 1458, 830, 3022, 2983, 473, 4473, 3375, 2461, 3144, 1323, 2094, 2835, 2384, 4247, 2240, 782, 1130, 3671, 732, 2798, 3540, 4161, 515, 3752, 4120, 1943, 1596, 1977, 3631, 2944, 4071, 1258, 2274, 554, 1161, 1289, 2689, 957, 924, 1491, 1529, 2723, 2608, 2345, 71, 1064, 1191, 3924, 2016, 3495, 2054, 265, 1393, 1561, 3965, 2538, 4008, 2424, 1901, 2310, 2500, 174, 296, 2131, 3882, 642, 1873, 3340, 2905, 3186, 2572, 994, 1355, 1101, 1765, 239, 332, 2, 3712
+## FT03 2425, 2311, 2763, 2241, 3925, 3798, 2132, 876, 3341, 431, 3413, 3376, 474, 3255, 2573, 733, 831, 3023, 3672, 38, 686, 3753, 3586, 3145, 4379, 643, 2647, 72, 2945, 3496, 4335, 4205, 2539, 2869, 3966, 4248, 2203, 3843, 139, 600, 1562, 1324, 4289, 4162, 2017, 2501, 4474, 2799, 2609, 394, 1978, 1192, 4009, 1944, 516, 2385, 4121, 2095, 2055, 1530, 2167, 958, 175, 555, 1030, 4072, 208, 1162, 2275, 1597, 1356, 1733, 3223, 783, 107, 1065, 1427, 925, 3, 3187, 1492, 1841, 240, 1635, 266, 2836, 1902, 1874, 1102, 1394, 333, 359, 297, 3300, 1704, 2906, 3060, 2984, 3883, 3541, 3632, 1131, 3102, 1670, 1459, 1766, 2724, 3455, 1805, 2462, 2346, 3713, 2690, 1225, 995, 4426, 1290, 1259
+## FT04                                                                                                                                                                                                                   3673, 735, 3542, 4427, 3061, 2018, 4290, 3024, 3714, 4, 2648, 3146, 878, 4381, 832, 432, 2096, 2347, 3256, 2056, 475, 644, 2386, 2276, 4249, 784, 3799, 3301, 3633, 395, 2691, 688, 1066, 3456, 3754, 298, 2168, 176, 1563, 2242, 2610, 3224, 2870, 3587, 3844, 1806, 3926, 4475, 4163, 2764, 2946, 2502, 517, 2725, 3104, 140, 4073, 1979, 1598, 4206, 360, 1636, 3884, 4122, 1260, 3497, 602, 2312, 1531, 1903, 3967, 2985, 3188, 4336, 1671, 556, 2907, 4011, 1357, 1493, 1460
+## FT05                                                                                                                                                                                                                                                                                  2837, 926, 2986, 1637, 3342, 2387, 3189, 1980, 3025, 3414, 2503, 3302, 2871, 736, 3377, 2649, 2800, 2947, 2019, 3257, 2243, 1067, 2426, 2726, 1945, 177, 1325, 2692, 433, 5, 4012, 1226, 2540, 1358, 2611, 108, 2574, 2133, 4074, 2057, 2463, 1132, 1564, 1428, 2908, 1461, 1261, 1767, 2348, 1494, 1807, 2097, 996, 1395, 1734, 3147, 1291, 1842, 959, 3225, 2765, 1705, 1031, 1672, 1904, 1163, 2313, 2277, 1103
+## FT06                                                                                                               3498, 2350, 3303, 2909, 3343, 3190, 4428, 960, 3715, 879, 3543, 2767, 2650, 2949, 3415, 1946, 4382, 3026, 434, 3674, 3105, 2838, 209, 476, 3755, 2988, 4207, 1674, 3378, 4291, 3062, 1326, 2727, 737, 2575, 178, 3634, 645, 4164, 2465, 1981, 3258, 3800, 2612, 1262, 833, 1768, 2099, 2541, 396, 785, 689, 2204, 3148, 2134, 603, 3845, 1599, 2693, 2169, 2504, 1565, 3226, 3588, 1495, 518, 2388, 6, 3885, 4337, 2058, 4075, 4250, 927, 2427, 1032, 1638, 997, 2020, 4476, 3927, 557, 361, 1292, 1359, 1462, 1429, 1843, 1227, 1396, 3968, 1809, 2314, 4013, 2801, 4123, 2279, 2872</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">write.csv</span>(feature_def, <span class="st">&quot;XCMS_feature_definitions.csv&quot;</span>, <span class="at">row.names =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<h1 id="saving-the-feature-values-to-a-file">Saving the feature values
+to a file</h1>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>feat_vals <span class="ot">&lt;-</span> <span class="fu">featureValues</span>(ham_prep, <span class="at">value =</span> <span class="st">&quot;into&quot;</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="fu">head</span>(feat_vals)</span></code></pre></div>
+<pre><code>##      Combined_P1_t0h.mzML Combined_P1_t10h.mzML Combined_P1_t11h.mzML
+## FT01             365304.0              418409.4              427656.0
+## FT02             444798.7              636950.8              424984.3
+## FT03             659627.1             1392095.3             1417412.0
+## FT04             260256.8                    NA                    NA
+## FT05             328739.8                    NA                    NA
+## FT06             238009.5                    NA                    NA
+##      Combined_P1_t1h.mzML Combined_P1_t2h.mzML Combined_P1_t3h.mzML
+## FT01             361103.5             371475.4             365453.9
+## FT02             364118.0             381473.6             452609.4
+## FT03             663000.7             846915.3             887493.9
+## FT04                   NA             282702.0             245023.5
+## FT05             348040.6                   NA             290524.6
+## FT06                   NA                   NA             232278.2
+##      Combined_P1_t4h.mzML Combined_P1_t5h.mzML Combined_P1_t6h.mzML
+## FT01             367837.0             363852.2             365435.5
+## FT02             491992.1             387946.6             519005.3
+## FT03             932012.5             779218.5             785199.1
+## FT04                   NA                   NA                   NA
+## FT05                   NA                   NA                   NA
+## FT06             226545.9                   NA                   NA
+##      Combined_P1_t7h.mzML Combined_P1_t8h.mzML Combined_P1_t9h.mzML
+## FT01             367192.3             359596.1             364096.7
+## FT02             484617.6             374283.4             518664.7
+## FT03             803193.7             838264.5             803745.1
+## FT04             249426.2                   NA             292046.8
+## FT05                   NA                   NA                   NA
+## FT06                   NA                   NA             235956.4
+##      Combined_P10_t0h.mzML Combined_P10_t10h.mzML Combined_P10_t11h.mzML
+## FT01              416962.4               419586.7               530537.3
+## FT02              858054.9               838058.3               964739.0
+## FT03             1365804.8              1380110.8              1403317.9
+## FT04              393486.7               334280.7               391673.2
+## FT05                    NA               311556.6                     NA
+## FT06              283395.6               287208.9               323750.4
+##      Combined_P10_t1h.mzML Combined_P10_t2h.mzML Combined_P10_t3h.mzML
+## FT01              424338.5              547596.0              408343.4
+## FT02              812279.7              805844.1              693462.1
+## FT03             1387532.3             1447999.7             1400176.2
+## FT04              335921.1              391654.3              456893.8
+## FT05                    NA                    NA                    NA
+## FT06              271705.4              308934.7              289584.7
+##      Combined_P10_t4h.mzML Combined_P10_t5h.mzML Combined_P10_t6h.mzML
+## FT01              418337.0              407647.5              417624.6
+## FT02              722609.0             1058140.0             1101079.7
+## FT03             1296519.9             1281235.9             1281865.2
+## FT04              466038.5              432010.2              473073.3
+## FT05                    NA                    NA              314796.3
+## FT06              272631.2              317830.2              342639.4
+##      Combined_P10_t7h.mzML Combined_P10_t8h.mzML Combined_P10_t9h.mzML
+## FT01              408967.4              406701.4              513532.6
+## FT02              867633.2             1106522.1              866011.5
+## FT03             1205968.9             1322183.8             1372336.5
+## FT04              542011.5              461883.9              396573.3
+## FT05                    NA                    NA                    NA
+## FT06              324574.9              312481.0              349091.1
+##      Combined_P2_t0h.mzML Combined_P2_t10h.mzML Combined_P2_t11h.mzML
+## FT01             353971.0              400274.4              384061.9
+## FT02             459353.3              548093.7              515003.3
+## FT03             833758.0             1474032.8              992538.0
+## FT04                   NA                    NA                    NA
+## FT05             434414.2              896042.1              498304.8
+## FT06             247052.4              306904.0              235210.6
+##      Combined_P2_t1h.mzML Combined_P2_t2h.mzML Combined_P2_t3h.mzML
+## FT01             366428.6             369917.8             369205.7
+## FT02             354302.6             466858.6             334374.0
+## FT03            1088198.8            1009742.5             850534.4
+## FT04                   NA             301397.0                   NA
+## FT05             762977.5            1157445.6             309974.1
+## FT06             285087.9                   NA                   NA
+##      Combined_P2_t4h.mzML Combined_P2_t5h.mzML Combined_P2_t6h.mzML
+## FT01             375741.2             373843.7             373671.9
+## FT02             381211.4             386145.3             411436.7
+## FT03             922973.4            1223467.8            1260401.5
+## FT04                   NA                   NA                   NA
+## FT05             390767.4             238523.1                   NA
+## FT06                   NA                   NA                   NA
+##      Combined_P2_t7h.mzML Combined_P2_t8h.mzML Combined_P2_t9h.mzML
+## FT01             386653.1             382060.1             391991.6
+## FT02             425164.0             603465.7             509004.3
+## FT03             959984.5            1000894.4            1058012.5
+## FT04                   NA             270129.3                   NA
+## FT05             400325.3             630699.3             493890.3
+## FT06             247192.6             251919.8             247947.8
+##      Combined_P3_t0h.mzML Combined_P3_t10h.mzML Combined_P3_t11h.mzML
+## FT01             380257.2              385078.2              385088.2
+## FT02             492581.8              390068.9              462130.6
+## FT03            1310355.1              981324.1              816530.4
+## FT04                   NA              321130.4                    NA
+## FT05             651555.7              502224.2              575251.5
+## FT06             275288.9              250281.8              237626.5
+##      Combined_P3_t1h.mzML Combined_P3_t2h.mzML Combined_P3_t3h.mzML
+## FT01             372556.5             372303.9             375487.8
+## FT02             472114.5             610580.7             443983.7
+## FT03            1102832.3             929205.3             822430.5
+## FT04                   NA             256700.5             264207.7
+## FT05             481645.8             372598.7             278152.5
+## FT06             243423.8             267905.9             279909.4
+##      Combined_P3_t4h.mzML Combined_P3_t5h.mzML Combined_P3_t6h.mzML
+## FT01             379732.3             368224.8             380994.8
+## FT02             481056.8             446459.6             421259.7
+## FT03            1123157.1            1088958.7            1047231.1
+## FT04             292492.5             333995.4             245507.0
+## FT05                   NA             486471.7                   NA
+## FT06                   NA             267516.7             242699.5
+##      Combined_P3_t7h.mzML Combined_P3_t8h.mzML Combined_P3_t9h.mzML
+## FT01             375466.5             386761.0             382382.3
+## FT02             331909.2             379516.3             351108.1
+## FT03             794222.2             804534.2             822452.8
+## FT04             270819.1             260655.1                   NA
+## FT05             639112.3             890379.2             484555.6
+## FT06             283548.2             307808.8                   NA
+##      Combined_P4_t0h.mzML Combined_P4_t10h.mzML Combined_P4_t11h.mzML
+## FT01             385171.5              379611.8              377467.7
+## FT02             335850.1              457477.0              471172.6
+## FT03             966888.1              919901.0              898121.8
+## FT04                   NA                    NA              286067.8
+## FT05             339072.8              823887.0              837994.4
+## FT06                   NA              302341.9              271932.9
+##      Combined_P4_t1h.mzML Combined_P4_t2h.mzML Combined_P4_t3h.mzML
+## FT01             382073.1             383003.3             381762.2
+## FT02             350230.1             436712.4             579869.8
+## FT03             753180.3             798046.3             742763.1
+## FT04                   NA                   NA             282182.7
+## FT05             326941.4                   NA            1528358.1
+## FT06             245326.1                   NA                   NA
+##      Combined_P4_t4h.mzML Combined_P4_t5h.mzML Combined_P4_t6h.mzML
+## FT01             368701.6             369562.4             377241.9
+## FT02             766352.9             654844.4             508776.4
+## FT03            1048607.8            1067803.2            1095620.6
+## FT04                   NA             371319.0             297801.9
+## FT05             808848.4             666499.6             841717.8
+## FT06             295457.8             275496.3             304565.9
+##      Combined_P4_t7h.mzML Combined_P4_t8h.mzML Combined_P4_t9h.mzML
+## FT01             373851.8             375287.1             379342.9
+## FT02             579190.4             539295.9             530797.6
+## FT03            1120028.8            1136086.3            1085596.3
+## FT04             306566.9             247093.9                   NA
+## FT05             381417.6             979880.7             646886.3
+## FT06             307840.7             297907.2             282678.8
+##      Combined_P5_t0h.mzML Combined_P5_t10h.mzML Combined_P5_t11h.mzML
+## FT01             385516.6              388081.3              390103.0
+## FT02             505882.6              391917.3              593859.4
+## FT03            1171527.5             1304152.1             1206935.1
+## FT04             313177.5                    NA              292563.4
+## FT05                   NA                    NA              644227.4
+## FT06             246137.9              286938.1                    NA
+##      Combined_P5_t1h.mzML Combined_P5_t2h.mzML Combined_P5_t3h.mzML
+## FT01             377844.2             378563.6             372979.3
+## FT02             539151.3             479880.0             349229.5
+## FT03            1179426.0            1092815.6             926437.3
+## FT04             235227.1             284567.1             246251.4
+## FT05            1074610.8             535882.4             853896.0
+## FT06             308631.9             296968.2             264053.0
+##      Combined_P5_t4h.mzML Combined_P5_t5h.mzML Combined_P5_t6h.mzML
+## FT01             374888.1             375951.9             381694.9
+## FT02             423488.5             449132.2             361670.8
+## FT03            1230085.9            1071539.2             964482.0
+## FT04             300380.8                   NA                   NA
+## FT05             526995.8             330233.6             975310.3
+## FT06             254592.5             295869.3             327975.1
+##      Combined_P5_t7h.mzML Combined_P5_t8h.mzML Combined_P5_t9h.mzML
+## FT01             383168.3             383626.4             375631.3
+## FT02             411664.3             399091.7             370714.7
+## FT03            1269520.1            1239949.2            1213800.0
+## FT04             263688.2                   NA                   NA
+## FT05             470218.9             402801.9             406950.8
+## FT06             291460.3             276260.7             263867.7
+##      Combined_P6_t0h.mzML Combined_P6_t10h.mzML Combined_P6_t1h.mzML
+## FT01             382458.2              389169.3             391785.1
+## FT02             434205.8              458097.6             426021.9
+## FT03            1296248.5             1054620.4             948873.4
+## FT04             299574.5              312841.3             283644.5
+## FT05             555807.1              346361.6             813628.6
+## FT06             249616.9              290553.0             270215.6
+##      Combined_P6_t2h.mzML Combined_P6_t3h.mzML Combined_P6_t4h.mzML
+## FT01             383399.3             383600.8             385899.7
+## FT02             372453.3             441906.6             558818.1
+## FT03             931994.6            1083245.0            1130053.0
+## FT04             244131.5             251774.7                   NA
+## FT05             454993.4             817391.8             473985.8
+## FT06             277488.2             287876.9             256179.4
+##      Combined_P6_t5h.mzML Combined_P6_t6h.mzML Combined_P6_t7h.mzML
+## FT01             383351.9             382737.7             379487.1
+## FT02             459293.1             376623.3             417161.5
+## FT03             819884.5            1080401.5             859883.7
+## FT04                   NA             292007.3             282524.9
+## FT05             238149.7             747477.2             587055.1
+## FT06             281905.8             240615.4             298439.9
+##      Combined_P6_t8h.mzML Combined_P6_t9h.mzML Combined_P7_t0h.mzML
+## FT01             387091.9             391032.3             393671.2
+## FT02             438297.7             479816.9             430150.8
+## FT03            1051838.9             863353.6            1061505.5
+## FT04             260936.5             320190.9             260889.2
+## FT05             925453.9             885923.5             322546.4
+## FT06             374989.5             322022.1             283754.7
+##      Combined_P7_t10h.mzML Combined_P7_t11h.mzML Combined_P7_t1h.mzML
+## FT01              390653.4              385542.3             380330.6
+## FT02              875196.5              723882.4             414911.4
+## FT03              884540.5              859822.1            1067043.7
+## FT04              401060.9              366048.8             277411.6
+## FT05                    NA                    NA             236023.7
+## FT06              350539.0              283874.2             314026.5
+##      Combined_P7_t2h.mzML Combined_P7_t3h.mzML Combined_P7_t4h.mzML
+## FT01             394600.6             402093.7             397810.2
+## FT02             413149.9             419342.6             358425.2
+## FT03             793641.9            1011281.3            1105856.2
+## FT04             246659.0             252665.6             270143.1
+## FT05             318342.7             224474.1             259774.9
+## FT06             261937.6             260110.8             268102.5
+##      Combined_P7_t6h.mzML Combined_P7_t7h.mzML Combined_P7_t8h.mzML
+## FT01             400724.7             390330.8             388207.5
+## FT02             435003.7             321901.4             328469.2
+## FT03             902016.8            1094133.5            1099746.9
+## FT04             295643.6                   NA                   NA
+## FT05             313557.3             341269.2             256971.5
+## FT06             256467.7             251262.1             278273.5
+##      Combined_P7_t9h.mzML Combined_P8_t0h.mzML Combined_P8_t10h.mzML
+## FT01             387839.4             391787.6              393708.2
+## FT02             299420.1             572007.7              641816.5
+## FT03            1094063.4             860161.5             1057202.6
+## FT04                   NA             327038.3              317233.4
+## FT05             348558.2                   NA                    NA
+## FT06             257303.0                   NA              276687.1
+##      Combined_P8_t11h.mzML Combined_P8_t1h.mzML Combined_P8_t2h.mzML
+## FT01              389587.5             394179.4             395603.9
+## FT02              870126.4             998721.2             644606.4
+## FT03              849083.7            1128916.0             949988.2
+## FT04              407451.0             432334.6             453255.9
+## FT05                    NA                   NA                   NA
+## FT06              286203.5             296803.3             289357.3
+##      Combined_P8_t3h.mzML Combined_P8_t4h.mzML Combined_P8_t5h.mzML
+## FT01             392986.3             400722.4             399076.8
+## FT02             876863.2             420921.9             803050.7
+## FT03            1179226.6             908395.1            1217098.3
+## FT04             444877.5             342470.9             442891.6
+## FT05                   NA                   NA                   NA
+## FT06             308964.4             291658.5             297450.9
+##      Combined_P8_t6h.mzML Combined_P8_t7h.mzML Combined_P8_t8h.mzML
+## FT01             407675.5             397238.6             386621.1
+## FT02             680014.5             737091.0             739365.1
+## FT03            1169425.8            1181311.6             874092.0
+## FT04             368753.5             442710.3             415377.7
+## FT05                   NA                   NA                   NA
+## FT06             296262.2             311890.1             289943.7
+##      Combined_P8_t9h.mzML Combined_P9_t0h.mzML Combined_P9_t10h.mzML
+## FT01             388580.7             389578.9              413659.6
+## FT02             698086.6             750930.5             1050585.8
+## FT03            1023791.8            1096864.8             1327899.0
+## FT04             369546.4             419972.0              428598.3
+## FT05                   NA                   NA              389912.4
+## FT06             281784.7             299450.0              295853.2
+##      Combined_P9_t11h.mzML Combined_P9_t1h.mzML Combined_P9_t2h.mzML
+## FT01              530548.9             393468.5             398907.7
+## FT02              932606.5             660632.8             792114.7
+## FT03             1343556.7            1135323.3            1146419.4
+## FT04              501791.9             354265.4             391606.6
+## FT05              315920.3                   NA                   NA
+## FT06              280174.5             260540.0             311301.2
+##      Combined_P9_t3h.mzML Combined_P9_t4h.mzML Combined_P9_t5h.mzML
+## FT01             399875.9             402360.0             400124.4
+## FT02             728636.7             654421.2             746824.8
+## FT03            1158197.0            1173273.2            1190276.0
+## FT04             346748.5             327398.4             353756.4
+## FT05                   NA                   NA                   NA
+## FT06             295083.6             296242.7             313779.6
+##      Combined_P9_t6h.mzML Combined_P9_t7h.mzML Combined_P9_t8h.mzML
+## FT01             406660.9             412236.5             413508.4
+## FT02             737163.8             790152.5             891931.5
+## FT03            1234173.1            1258291.3             935111.1
+## FT04             467983.0             377801.1             344355.7
+## FT05                   NA                   NA                   NA
+## FT06             304474.0             314771.7             285575.7
+##      Combined_P9_t9h.mzML
+## FT01             415814.2
+## FT02             982517.1
+## FT03            1314763.5
+## FT04             474332.8
+## FT05                   NA
+## FT06             321881.7</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">write.csv</span>(feat_vals, <span class="st">&quot;XCMS_feature_values.csv&quot;</span>,  <span class="at">row.names =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+
+</body>
+</html>
