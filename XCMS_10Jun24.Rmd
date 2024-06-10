@@ -1,0 +1,105 @@
+
+---
+title: "XCMS Pipeline Template"
+output: github_document
+---
+# Introduction 
+
+# Loading libraries
+```{R}
+# Load required libraries
+library(MSnbase)
+library(xcms)
+library(MassSpecWavelet)
+
+register(SerialParam())
+```
+
+# Loading in data
+Loading in the combined data files and using the command readMSData to load in the raw spectrum data
+```{R}
+# Define folder path and list mzML files
+folder_path <- "G:/My Drive/Bioinformatics/LIFE700 Final Project/Data/Combined Files"
+mzML_files <- list.files(path=folder_path,full.names=TRUE,pattern = "\\.mzML$")
+
+# Separate patient ID and time point from filenames
+file_info <- data.frame(
+  filename = mzML_files,
+  patient_id = sub("Combined_P(\\d+)_t\\d+h\\.mzML", "\\1", mzML_files),
+  time_point = sub("Combined_P\\d+_t(\\d+)h\\.mzML", "\\1", mzML_files)
+)
+
+# Load data using readMSData
+ham_raw <- readMSData(files = mzML_files, 
+                      pdata = new("NAnnotatedDataFrame", file_info),
+                      mode = "onDisk")
+
+# Check retention time
+rtime(ham_raw)
+```
+# Peak detection 
+```{R}
+# Set parameters for peak detection (adjust as needed)
+msw <- MSWParam(scales = c(1, 4, 9), nearbyPeak = TRUE, winSize.noise = 500,
+                 SNR.method = "data.mean", snthresh = 10)
+
+# Find chromatography peaks
+ham_prep <- findChromPeaks(ham_raw, param = msw)
+
+# View the first few peaks
+head(chromPeaks(ham_prep))
+```
+# Calibration 
+Calibration canbe used to correct the m/z values of the identified peaks.
+The "edgeshift" method adjusts all peaks within the range of m/z values of calibrants calculated from one datafile
+```{R}
+## Subset to the first file.
+first_file <- filterFile(ham_prep, file = 1)
+## Extract 3 m/z values
+calib_mz <- chromPeaks(first_file)[c(1, 4, 7), "mz"]
+calib_mz <- calib_mz + 0.00001 * runif(1, 0, 0.4) * calib_mz + 0.0001
+# Calibration using edgeshift
+prm <- CalibrantMassParam(mz = calib_mz, method = "edgeshift",
+                          mzabs = 0.0001, mzppm = 5)
+first_file_calibrated <- calibrate(first_file, param = prm)
+
+# Plotting the results of the calibration 
+diffs <- chromPeaks(first_file_calibrated)[, "mz"] -
+  chromPeaks(first_file)[, "mz"]
+
+plot(x = chromPeaks(first_file)[, "mz"], xlab = expression(m/z[raw]),
+     y = diffs, ylab = expression(m/z[calibrated] - m/z[raw]))
+```
+
+# Grouping the peaks
+Groups the peaks from each patients 
+```{R}
+mzc_prm <- MzClustParam(sampleGroups = ham_prep$sample_group)
+ham_prep <- groupChromPeaks(ham_prep, param = mzc_prm)
+ham_prep
+```
+
+# Saving the feature definitions to a file 
+```{R}
+feature_def <- featureDefinitions(ham_prep)
+feature_def <- as.data.frame(feature_def)
+
+is_list_col <- sapply(feature_def, is.list)
+
+# Flatten list columns
+for (col in names(feature_def)[is_list_col]) {
+  feature_def[[col]] <- sapply(feature_def[[col]], toString)
+}
+
+head(feature_def)
+write.csv(feature_def, "XCMS_feature_definitions.csv", row.names = TRUE)
+
+```
+
+# Saving the feature values to a file 
+```{R}
+feat_vals <- featureValues(ham_prep, value = "into")
+head(feat_vals)
+write.csv(feat_vals, "XCMS_feature_values.csv",  row.names = TRUE)
+
+```
