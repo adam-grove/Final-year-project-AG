@@ -1,0 +1,118 @@
+---
+title: "PCA Visualiser"
+output: html_document
+date: "2024-08-08"
+---
+# Libraries 
+```{R,echo= FALSE}
+library(S4Vectors)
+# library(SummarizedExperiment)
+library(pmp)
+library(ggplot2)
+library(reshape2)
+library(gridExtra)
+
+```
+# Loading in the data 
+```{R}
+my_data <- read.csv("DIMSpy_SNR2.0_ppm223_NC_Feature_Matrix.csv")
+my_data <-data.frame(my_data, row.names = 1)
+my_data <- as.matrix(my_data, mode = "numeric")
+plots <- list()
+```
+# Function for extracting metadata
+```{R}
+extract_info <- function(colname) {
+  # Split the column name by underscores
+  split_name <- strsplit(colname, "_")[[1]]
+  
+  # Extract batch number (get last character)
+  batch_number <- substr(split_name[1], nchar(split_name[1]), nchar(split_name[1]))
+  
+  # Extract animal code (remove numbers)
+  animal_code <- gsub("\\d", "", split_name[2])
+  
+  # Return a list with extracted information in desired format
+  return(list(batch = batch_number, animal = animal_code))
+}
+```  
+# Extracting metadata
+```{R}  
+column_names <- colnames(my_data)
+
+# Apply the function to all column names except the first
+extracted_info <- lapply(column_names, extract_info)
+
+# Access the extracted information (separate vectors for clarity)
+batch <- sapply(extracted_info, function(x) x$batch)
+class <- sapply(extracted_info, function(x) x$animal)
+```
+
+# PCA analysis 
+```{R}
+manual_color = c("#386cb0", "#ef3b2c", "#7fc97f", "#fdb462", "#984ea3", 
+                 "#a6cee3", "#778899", "#fb9a99", "#ffff33")
+pca_data <- mv_imputation(my_data, method="KNN", k=5, rowmax=0.5,
+                          colmax=1.0, maxp=NULL, check_df=FALSE)
+
+pca_data <- t(pca_data)
+pca_data <- prcomp(pca_data , centre = TRUE, scale = FALSE)
+
+exp_var_pca <- round(((pca_data$sdev^2)/sum(pca_data$sdev^2)*100)[1:2],2)
+
+````
+```{R}
+
+print(dim(my_data))
+print(length(batch))
+print(length(class))
+print(dim(pca_data))
+```
+# Before normalisation
+```{R}
+plotdata <- data.frame(PC1=pca_data$x[, 1], PC2=pca_data$x[, 2], 
+                       batch=as.factor(batch), class=class)
+plots[[1]]<- ggplot(data=plotdata, aes(x=PC1, y=PC2, col=class)) +
+  geom_point(size=2) + theme(panel.background=element_blank(),legend.position = "none") +
+  scale_color_manual(values=manual_color) +
+  ggtitle("PCA scores, before normalisation") +
+  xlab(paste0("PC1 (", exp_var_pca[1] ," %)")) +
+  ylab(paste0("PC2 (", exp_var_pca[2] ," %)"))
+plots[[1]]
+
+```
+# Normalising the data
+```{R,echo=F}
+data <- my_data
+
+pca_data <- pqn_normalisation(data, classes=class, qc_label="QC")
+pca_data <- mv_imputation(data, method="KNN", k=5, rowmax=0.5,
+                          colmax=1.0, maxp=NULL, check_df=FALSE)
+pca_data <- glog_transformation(pca_data, classes=class, qc_label="QC")
+
+
+pca_data_transposed <- t(pca_data)
+pca_data <- prcomp(pca_data_transposed, center=TRUE, scale=FALSE)
+
+exp_var_pca <- round(((pca_data$sdev^2)/sum(pca_data$sdev^2)*100)[1:2],2)
+
+
+
+```
+# Plotting the PCA
+```{R}
+plotdata <- data.frame(PC1=pca_data$x[, 1], PC2=pca_data$x[, 2], 
+                       batch=as.factor(batch), class=class)
+
+plots[[2]] <- ggplot(data=plotdata, aes(x=PC1, y=PC2, col=class)) +
+  geom_point(size=2) + theme(panel.background=element_blank()) +
+  scale_color_manual(values=manual_color) +
+  ggtitle("PCA scores, after normalisation") +
+  xlab(paste0("PC1 (", exp_var_pca[1] ," %)")) +
+  ylab(paste0("PC2 (", exp_var_pca[2] ," %)"))
+plots[[2]]
+```
+# Figure generation
+```{R}
+grid.arrange(ncol=2,plots[[1]],plots[[2]])
+```
