@@ -1,0 +1,114 @@
+---
+title: "Batch Correction PCA Visualiser"
+output: html_document
+date: "2024-08-08"
+---
+# Import Libraries
+```{R}
+library(pmp)
+library(ggplot2)
+```
+# Reading in data
+```{R}
+my_data <- read.csv("C:/Users/adamg/OneDrive - The University of Liverpool/Project Work/DIMSpy/Runs/DIMSpy_SNR3.5_ppm555_NC_Feature_Matrix.csv")
+
+
+my_data <-data.frame(my_data, row.names = 1)
+my_data <- as.matrix(my_data, mode = "numeric")
+```
+# Function for extracting metadata
+```{R}
+extract_info <- function(colname) {
+  # Split the column name by underscores
+  split_name <- strsplit(colname, "_")[[1]]
+  
+  # Extract batch number (get last character)
+  batch_number <- substr(split_name[1], nchar(split_name[1]), nchar(split_name[1]))
+  
+  # Extract animal code (remove numbers)
+  animal_code <- gsub("\\d", "", split_name[2])
+  
+  # Return a list with extracted information in desired format
+  return(list(batch = batch_number, animal = animal_code))
+}
+```  
+
+
+# Extracting metadata
+```{R}  
+column_names <- colnames(my_data)
+
+# Apply the function to all column names except the first
+extracted_info <- lapply(column_names, extract_info)
+batch <- sapply(extracted_info, function(x) x$batch)
+class <- sapply(extracted_info, function(x) x$animal)
+sample_order <- seq_along(colnames(my_data))
+
+
+
+data <- filter_peaks_by_fraction(df=my_data, classes=class, method="QC",
+                                 qc_label="QC", min_frac=0.8)
+```
+# Batch Correction 
+```{R}
+corrected_data <- QCRSC(df=data, order=sample_order, batch=batch, 
+                        classes=class, spar=0, minQC=4)
+
+```
+# Normalisation
+# Normalising the data
+```{R,echo=F}
+pca_data <- corrected_data
+
+pca_data <- pqn_normalisation(pca_data, classes=class, qc_label="QC")
+
+pca_data <- filter_samples_by_mv(pca_data, max_perc_mv = 0.8, classes = class, remove_samples = TRUE)
+
+pca_data <- mv_imputation(pca_data, method="KNN", k=5, rowmax=0.5,
+                          colmax=1.0, maxp=NULL, check_df=FALSE)
+column_names <- colnames(pca_data)
+
+# Apply the function to all column names except the first
+extracted_info <- lapply(column_names, extract_info)
+batch <- sapply(extracted_info, function(x) x$batch)
+class <- sapply(extracted_info, function(x) x$animal)
+sample_order <- seq_along(colnames(my_data))
+
+
+pca_data <- glog_transformation(pca_data, classes=class, qc_label="QC")
+
+write.csv(pca_data,"DIMSpy_SNR3.5_ppm555_NC_BC_Feature_Matrix.csv")
+
+```
+
+```{R}
+pca_data_transposed <- t(pca_data)
+pca_data <- prcomp(pca_data_transposed, center=TRUE, scale=FALSE)
+
+exp_var_pca <- round(((pca_data$sdev^2)/sum(pca_data$sdev^2)*100)[1:2],2)
+
+
+
+```
+# Plotting the PCA
+```{R}
+plots = list()
+
+manual_color = c("#386cb0", "#ef3b2c", "#7fc97f", "#fdb462", "#984ea3", 
+                 "#a6cee3", "#778899", "#fb9a99", "#ffff33")
+
+plotdata <- data.frame(PC1=pca_data$x[, 1], PC2=pca_data$x[, 2], 
+                       batch=as.factor(batch), class=class)
+
+plots[[2]] <- ggplot(data=plotdata, aes(x=PC1, y=PC2, col=class)) +
+  geom_point(size=2) + theme(panel.background=element_blank()) +
+  scale_color_manual(values=manual_color) +
+  ggtitle("") +
+  xlab(paste0("PC1 (", exp_var_pca[1] ," %)")) +
+  ylab(paste0("PC2 (", exp_var_pca[2] ," %)"))
+plots[[2]]
+```
+
+
+
+
