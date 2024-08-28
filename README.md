@@ -3,7 +3,7 @@ Improving a direct infusion mass spectrometry data processing pipeline
 File Formatting
 
 Combining_Spectra.rmd: R Markdown script for combining spectra to ensure compatibility with MALDIquant.
-MALDIquant_Formatter.ipynb: Jupyter Notebook for standardizing MALDIquant output.
+* MALDIquant_Formatter.ipynb: Jupyter Notebook for standardizing MALDIquant output.
 DIMSpy_Formatter.ipynb: Jupyter Notebook for standardizing DIMSpy output.
 MZmine_Formatter.ipynb: Jupyter Notebook for standardizing MZmine3 output.
 Pipeline Runs
