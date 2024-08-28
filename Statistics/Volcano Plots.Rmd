@@ -1,0 +1,62 @@
+---
+title: "Volcano Plots"
+output: html_document
+date: "2024-08-13"
+---
+
+# Libraries
+```{R}
+
+library(ggplot2)
+library(gridExtra)
+
+```
+# Reading in the data
+```{R}
+DIMSpy_df <- read.csv("DIMSpy_benjamini_p_values.csv")
+DIMSpy_fc <- read.csv("DIMSpy_FC.csv")
+
+MALDIquant_df <-read.csv("MALDIquant_benjamini_p_values.csv")
+MALDIquant_fc <- read.csv("MALDIquant_FC.csv")
+
+MZmine_df <- read.csv("MZmine_benjamini_p_values.csv")
+MZmine_fc <- read.csv("MZmine_FC.csv")
+```
+# Function to plot a volcano plot 
+```{R}
+Volcano_plot <- function(df,fc_df) {
+    p_values <- df$C.vs.S
+    fold_change <- fc_df$C.vs.S.Fold.Change
+    volcano_data <- data.frame(p_value = p_values, fold_change = fold_change)
+
+# Calculate -log10(p_value)
+volcano_data$neg_log10_pvalue <- -log10(volcano_data$p_value)
+volcano_data$significant <- volcano_data$p_value <= 0.05
+
+plot <- ggplot(volcano_data, aes(x = fold_change, y = neg_log10_pvalue, color = significant)) +
+  geom_point() +
+  geom_vline(xintercept = 0, color = "grey") +
+  geom_hline(yintercept = -log10(0.05), color = "grey") +
+  scale_color_manual(values = c("blue", "red")) +
+  labs(x = "log2 Fold Change", y = "-log10(p-value)") +
+  ggtitle("") +
+  theme(legend.position = "none") # +
+#  xlim(-1, 1) +
+#  ylim(-10, 80)
+return(plot)
+}
+
+```
+
+```{R}
+
+plots <- list()
+
+plots[[1]] <- Volcano_plot(DIMSpy_df,DIMSpy_fc)
+plots[[2]] <- Volcano_plot(MALDIquant_df,MALDIquant_fc)
+plots[[3]] <- Volcano_plot(MZmine_df,MZmine_fc)
+
+grid.arrange(plots[[1]], plots[[2]], plots[[3]], nrow = 1)
+
+
+```
