@@ -14,7 +14,7 @@ Pipeline Runs
 * DIMSpy_SNR2.0_ppm223_NC_Pipeline.ipynb: Jupyter Notebook for the initial DIMSpy run with default parameters.
 * DIMSpy_SNR3.5_ppm555_NC_Pipeline.ipynb: Jupyter Notebook for the DIMSpy run with optimized parameters.
 * MALDIquant_Tol5e-6_keep400_C_Pipeline.R: R script for the MALDIquant pipeline run.
-* 
+
 Data Processing
 * Normalization.R: R script for evaluating the effects of normalization on the data.
 * Corrected_PCA-DIMSpy.R: R script for batch correction using DIMSpy data.
