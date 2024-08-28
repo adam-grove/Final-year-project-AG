@@ -10,7 +10,7 @@ library(ggplot2)
 ```
 # Reading in data
 ```{R}
-my_data <- read.csv("C:/Users/adamg/OneDrive - The University of Liverpool/Project Work/MZmine/Runs/MZmine_MinF7.5E3_NT3.5_Tol555_NC_Feature_Matrix.csv")
+my_data <- read.csv("C:/Users/adamg/OneDrive - The University of Liverpool/Project Work/MALDIquant/Runs/MALDIquant_Tol5e-6_keep400_C_BC_Feature_Matrix.csv")
 
 
 my_data <-data.frame(my_data, row.names = 1)
